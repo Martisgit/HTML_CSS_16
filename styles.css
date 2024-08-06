@@ -55,6 +55,8 @@ button:hover {
   color: white;
   word-wrap: break-word;
   padding-left: 2rem;
+  animation-name: change-text-color;
+  animation-duration: 3s;
 }
 
 .text-container h1 {
@@ -82,6 +84,9 @@ button:hover {
   position: fixed;
   z-index: 1;
   transform: translate(-50%);
+  animation-name: change-header-color;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite; */
 }
 
 .ball {
@@ -99,9 +104,50 @@ button:hover {
   width: 100px;
   transition-duration: 0.4s;
   overflow: hidden;
+  animation-name: text-slide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 .ball:hover {
   background-color: #0c0c0c;
   color: white;
+}
+
+@keyframes text-slide {
+  0% {
+    right: 10%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    right: 10px;
+  }
+}
+
+@keyframes change-text-color {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    color: white;
+    opacity: 1;
+  }
+}
+
+@keyframes change-header-color {
+  0% {
+    color: lightblue;
+    opacity: 1;
+  }
+  100% {
+    color: white(2, 225, 255);
+    opacity: 1;
+  }
 }
